@@ -17,7 +17,7 @@ func QuickSort(list []int) []int {
 	if len(right) > 1 {
 		right = QuickSort(right)
 	}
-	list = append(left, pivot)
-	list = append(list, right...)
-	return list
+	result := append(left, pivot)
+	result = append(result, right...)
+	return result
 }

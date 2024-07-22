@@ -1,18 +1,19 @@
 package sort
 
-func InsertSort(list []int) []int {
-	for i := 1; i < len(list); i++ {
-		currentNum := list[i]
+func InsertSort(list []int) (result []int) {
+	result = append(result, list...)
+	for i := 1; i < len(result); i++ {
+		currentNum := result[i]
 		for z := i - 1; z >= 0; z-- {
-			if list[z] < currentNum {
-				list[z+1] = currentNum
+			if result[z] < currentNum {
+				result[z+1] = currentNum
 				break
 			}
-			list[z+1] = list[z]
+			result[z+1] = result[z]
 			if z == 0 {
-				list[z] = currentNum
+				result[z] = currentNum
 			}
 		}
 	}
-	return list
+	return result
 }
